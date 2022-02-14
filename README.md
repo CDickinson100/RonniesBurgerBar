@@ -1,7 +1,23 @@
-# Getting Started with Create React App
+\# Getting Started with Ronnies Burger Bar Website
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Pre-Requisites
+* MySQL Server
+## Setup
+To get started you first need to create a new database for ronniesburgerbar. to do this simply run the command:
+```
+create database ronniesburgerbar
+```
+This will create a new database, then you simply need to create a new user called `admin` with the password `password` with permissions to modify the database we just created. You can do this using the following commands.
+```
+CREATE USER 'admin'@'localhost' IDENTIFIED BY 'password';
+GRANT ALL PRIVILEGES ON ronniesburgerbar. * TO 'admin'@'localhost';
+FLUSH PRIVILEGES;
+```
+Alternatively you can modify the credentials in index.js and use another user/password
+
+Now you can now run the backend server by running `node index.js` You can also setup the backend server with default products by running the command `node index.js --init` This only needs to be ran once
 ## Available Scripts
 
 In the project directory, you can run:
@@ -17,7 +33,7 @@ You will also see any lint errors in the console.
 ### `npm test`
 
 Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+See the section about [running tests](https://facebook.github.io/create-reac\t-app/docs/running-tests) for more information.
 
 ### `npm run build`
 
