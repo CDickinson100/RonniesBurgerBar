@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const mysql = require('mysql2');
+const fs = require('fs');
 
 const connection = mysql.createConnection({
     host: 'localhost',
@@ -19,17 +20,21 @@ connection.connect(function (err) {
 
 function init() {
     console.log("Initializing Database");
+
     connection.query("DELETE FROM users;");
     connection.query("DELETE FROM orders;");
     connection.query("DELETE FROM order_items;");
     connection.query("DELETE FROM products;");
     console.log("Successfully Deleted Table Content");
-    connection.query('INSERT INTO products(category, name, description, price, image) VALUES ("Burgers", "Ronnies Special Cheese (Cheese Burger)", "test", 650, "test")');
-    connection.query('INSERT INTO products(category, name, description, price, image) VALUES ("Burgers", "Ronnies Bacon Mix (Bacon & Cheese Burger)", "test", 750, "test")');
-    connection.query('INSERT INTO products(category, name, description, price, image) VALUES ("Burgers", "The Two Ronnies (Double Burger)", "test", 900, "test")');
-    connection.query('INSERT INTO products(category, name, description, price, image) VALUES ("Burgers", "Chicken Delight (Chicken Burger)", "test", 700, "test")');
-    connection.query('INSERT INTO products(category, name, description, price, image) VALUES ("Burgers", "Veggie Supreme (Veggie Burger)", "test", 650, "test")');
-    connection.query('INSERT INTO products(category, name, description, price, image) VALUES ("Burgers", "Cheesy Ronnies Halloumi Burger", "test", 700, "test")');
+
+    const menu = JSON.parse(fs.readFileSync('menu.json'));
+    for (let i = 0; i < menu.length; i++) {
+        const product = menu[i];
+        connection.query('INSERT INTO products(category, name, description, price, image) VALUES (?, ?, ?, ?, ?)',
+            [product.category, product.name, product.description, product.price, product.image]
+        );
+        console.log("Added " + product.category + " " + product.name);
+    }
     console.log("Successfully Added Default Products");
 
 }
