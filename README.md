@@ -1,4 +1,4 @@
-\## Getting Started with Ronnies Burger Bar Website
+# Getting Started with Ronnies Burger Bar Website
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -7,7 +7,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## Setup
 To get started you first need to create a new database for ronniesburgerbar. to do this simply run the command:
 ```
-create database ronniesburgerbar
+CREATE DATABASE ronniesburgerbar;
 ```
 This will create a new database, then you simply need to create a new user called `admin` with the password `password` with permissions to modify the database we just created. You can do this using the following commands.
 ```
