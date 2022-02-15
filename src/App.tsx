@@ -7,6 +7,7 @@ import {Register} from "./components/register/Register";
 import {IUser} from "./IUser";
 import {Menu} from "./components/menu/Menu";
 import {IProduct} from "./IProduct";
+import {Checkout} from "./components/checkout/Checkout";
 
 export default function App() {
     const [sidebarVisible, setSidebarVisible] = useState(false);
@@ -43,6 +44,8 @@ export default function App() {
             <Routes>
                 <Route path="/menu"
                        element={<Menu addProduct={product => setShoppingCart([...shoppingCart, product])}/>}/>
+                <Route path="/checkout"
+                       element={<Checkout products={shoppingCart} clearBasket={() => setShoppingCart([])}/>}/>
                 <Route path="/login" element={<Login/>}/>
                 <Route path="/register" element={<Register/>}/>
             </Routes>
