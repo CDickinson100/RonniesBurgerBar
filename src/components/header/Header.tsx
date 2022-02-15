@@ -2,12 +2,13 @@ import React, {FC, useState} from 'react';
 import {Link} from 'react-router-dom';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faBars} from "@fortawesome/free-solid-svg-icons";
+import {faShoppingBasket} from "@fortawesome/free-solid-svg-icons";
 
 import './Header.css';
 import {IUser} from "../../IUser";
 
-export const Header: FC<{ toggleSidebar: () => void, user: IUser | undefined }> = ({toggleSidebar, user}) => {
-
+export const Header: FC<{ toggleSidebar: () => void, user: IUser | undefined, productCount: number }>
+    = ({toggleSidebar, user, productCount}) => {
     const [accountOptionsVisible, setAccountOptionsVisible] = useState(false);
 
     async function logout() {
@@ -36,6 +37,10 @@ export const Header: FC<{ toggleSidebar: () => void, user: IUser | undefined }> 
                                     onClick={() => setAccountOptionsVisible(!accountOptionsVisible)}>
                                 <p>{user.first_name + " " + user.last_name}</p>
                             </button>
+                            <div className="shopping-cart">
+                                <FontAwesomeIcon icon={faShoppingBasket}/>
+                                <p>{productCount}</p>
+                            </div>
                             {
                                 accountOptionsVisible ?
                                     <div className="account-options">

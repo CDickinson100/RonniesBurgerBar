@@ -6,10 +6,12 @@ import {Login} from "./components/login/Login";
 import {Register} from "./components/register/Register";
 import {IUser} from "./IUser";
 import {Menu} from "./components/menu/Menu";
+import {IProduct} from "./IProduct";
 
 export default function App() {
     const [sidebarVisible, setSidebarVisible] = useState(false);
 
+    const [shoppingCart, setShoppingCart] = useState<IProduct[]>([]);
 
     const [user, setUser] = useState<IUser | undefined>(undefined);
 
@@ -35,10 +37,12 @@ export default function App() {
 
     return (
         <BrowserRouter>
-            <Header toggleSidebar={() => setSidebarVisible(!sidebarVisible)} user={user}/>
+            <Header toggleSidebar={() => setSidebarVisible(!sidebarVisible)} user={user}
+                    productCount={shoppingCart.length}/>
             <Sidebar sidebarVisible={sidebarVisible} user={user}/>
             <Routes>
-                <Route path="/menu" element={<Menu/>}/>
+                <Route path="/menu"
+                       element={<Menu addProduct={product => setShoppingCart([...shoppingCart, product])}/>}/>
                 <Route path="/login" element={<Login/>}/>
                 <Route path="/register" element={<Register/>}/>
             </Routes>

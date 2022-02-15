@@ -1,10 +1,10 @@
-import React, {useEffect, useState} from 'react';
+import React, {FC, useEffect, useState} from 'react';
 
 import './Menu.css';
 import {IProduct} from "../../IProduct";
 import {MenuCategory} from "../menu-category/MenuCategory";
 
-export function Menu() {
+export const Menu: FC<{ addProduct: (product: IProduct) => void }> = ({addProduct}) => {
 
     const [products, setProducts] = useState<IProduct[]>([]);
 
@@ -23,9 +23,12 @@ export function Menu() {
 
     return (
         <div className="menu">
-            <MenuCategory category="Burgers" products={products.filter(value => value.category === "Burger")}/>
-            <MenuCategory category="Sides" products={products.filter(value => value.category === "Side")}/>
-            <MenuCategory category="Drinks" products={products.filter(value => value.category === "Drink")}/>
+            <MenuCategory category="Burgers" addProduct={addProduct}
+                          products={products.filter(value => value.category === "Burger")}/>
+            <MenuCategory category="Sides" addProduct={addProduct}
+                          products={products.filter(value => value.category === "Side")}/>
+            <MenuCategory category="Drinks" addProduct={addProduct}
+                          products={products.filter(value => value.category === "Drink")}/>
         </div>
     );
 }
