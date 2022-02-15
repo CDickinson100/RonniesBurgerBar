@@ -70,6 +70,15 @@
 .shopping-cart {
     display: flex;
     flex-direction: row;
+    cursor: pointer;
+}
+
+.shopping-cart:hover svg{
+    color: #2691d9;
+}
+
+.shopping-cart:hover p{
+    color: #2691d9;
 }
 
 .shopping-cart svg, p {

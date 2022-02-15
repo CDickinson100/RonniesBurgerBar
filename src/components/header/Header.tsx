@@ -37,10 +37,12 @@ export const Header: FC<{ toggleSidebar: () => void, user: IUser | undefined, pr
                                     onClick={() => setAccountOptionsVisible(!accountOptionsVisible)}>
                                 <p>{user.first_name + " " + user.last_name}</p>
                             </button>
-                            <div className="shopping-cart">
-                                <FontAwesomeIcon icon={faShoppingBasket}/>
-                                <p>{productCount}</p>
-                            </div>
+                            <Link to="/checkout">
+                                <div className="shopping-cart">
+                                    <FontAwesomeIcon icon={faShoppingBasket}/>
+                                    <p>{productCount}</p>
+                                </div>
+                            </Link>
                             {
                                 accountOptionsVisible ?
                                     <div className="account-options">
