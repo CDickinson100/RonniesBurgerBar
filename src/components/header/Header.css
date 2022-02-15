@@ -1,4 +1,4 @@
-.header{
+.header {
     position: fixed;
     top: 0;
     left: 0;
@@ -11,7 +11,7 @@
     z-index: 10000;
 }
 
-.header a{
+.header a {
     color: #ecf0f1;
     font-weight: bold;
     text-decoration: none;
@@ -20,35 +20,41 @@
     transition: 200ms;
 }
 
-.profile{
+.profile {
+    background-color: transparent;
+    border: none;
+}
+
+.profile p {
     color: #ecf0f1;
     font-weight: bold;
     text-decoration: none;
     padding-left: 0.5rem;
     padding-right: 0.5rem;
     transition: 200ms;
+    cursor: pointer;
 }
 
-.profile:hover{
+.profile p:hover {
     color: #2691d9;
 }
 
-.header a:hover{
+.header a:hover {
     color: #2691d9;
 }
 
-.header-content{
+.header-content {
     flex: 0 1 80rem;
     margin: auto 0;
     padding-left: 1rem;
 }
 
-.toggle-sidebar{
+.toggle-sidebar {
     display: none;
     margin: auto;
 }
 
-.toggle-sidebar button{
+.toggle-sidebar button {
     border: none;
     background-color: transparent;
     color: #ecf0f1;
@@ -56,17 +62,45 @@
     padding: 0;
 }
 
-.header-right{
+.header-right {
     margin: auto 25px;
     display: flex;
 }
 
+.account-options {
+    position: absolute;
+    background-color: #3d3d3e;
+    z-index: 9999;
+    top: 4rem;
+    left: min(calc(100% - 250px), 1460px);
+    width: 250px;
+}
+
+.account-options button{
+    background-color: transparent;
+    border: none;
+}
+
+.account-options p{
+    color: #ecf0f1;
+    font-weight: bold;
+    text-decoration: none;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    transition: 200ms;
+    cursor: pointer;
+}
+
+.account-options p:hover{
+    color: #2691d9;
+}
+
 @media only screen and (max-width: 850px) {
-    .header-content-link{
+    .header-content-link {
         display: none;
     }
 
-    .toggle-sidebar{
+    .toggle-sidebar {
         display: initial;
     }
 }
