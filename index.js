@@ -147,6 +147,22 @@ app.post('/logout', async (request, response) => {
     response.status(200).json({});
 });
 
+app.post('/getUser', async (request, response) => {
+    const token = request.body.token;
+    let userID = request.body.id;
+    if (token) userID = logins[token].id;
+
+    connection.query("SELECT first_name, last_name FROM users where id = ?", [userID], (error, results) => {
+        if (error) console.log(error);
+        if (results.length === 0) {
+            response.json({});
+        } else {
+            response.status(200).json(results[0]);
+        }
+    });
+
+});
+
 app.post('/createOrder', async (request, response) => {
     const token = request.body.token;
     if (!(token in logins)) {

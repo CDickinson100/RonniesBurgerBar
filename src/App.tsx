@@ -7,6 +7,7 @@ import {Register} from "./components/register/Register";
 
 export default function App() {
     const [sidebarVisible, setSidebarVisible] = useState(false);
+
     return (
         <BrowserRouter>
             <Header toggleSidebar={() => setSidebarVisible(!sidebarVisible)}/>

@@ -20,8 +20,21 @@
     transition: 200ms;
 }
 
+.profile{
+    color: #ecf0f1;
+    font-weight: bold;
+    text-decoration: none;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    transition: 200ms;
+}
+
+.profile:hover{
+    color: #2691d9;
+}
+
 .header a:hover{
-    color: aqua;
+    color: #2691d9;
 }
 
 .header-content{
@@ -32,6 +45,7 @@
 
 .toggle-sidebar{
     display: none;
+    margin: auto;
 }
 
 .toggle-sidebar button{
@@ -44,6 +58,7 @@
 
 .header-right{
     margin: auto 25px;
+    display: flex;
 }
 
 @media only screen and (max-width: 850px) {
