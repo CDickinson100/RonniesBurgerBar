@@ -5,6 +5,7 @@ import {Sidebar} from "./components/sidebar/Sidebar";
 import {Login} from "./components/login/Login";
 import {Register} from "./components/register/Register";
 import {IUser} from "./IUser";
+import {Menu} from "./components/menu/Menu";
 
 export default function App() {
     const [sidebarVisible, setSidebarVisible] = useState(false);
@@ -37,6 +38,7 @@ export default function App() {
             <Header toggleSidebar={() => setSidebarVisible(!sidebarVisible)} user={user}/>
             <Sidebar sidebarVisible={sidebarVisible} user={user}/>
             <Routes>
+                <Route path="/menu" element={<Menu/>}/>
                 <Route path="/login" element={<Login/>}/>
                 <Route path="/register" element={<Register/>}/>
             </Routes>

@@ -1,0 +1,39 @@
+.product {
+    width: 400px;
+    height: 600px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.05);
+    margin: 5px;
+}
+
+.product-image{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
+}
+
+.product h5 {
+    text-align: center;
+    padding: 20px 0;
+    border-bottom: 1px solid silver;
+}
+
+.product button {
+    width: 100%;
+    height: 50px;
+    border: 1px solid;
+    border-radius: 25px;
+    font-size: 18px;
+    cursor: pointer;
+    background-color: #2691d9;
+    margin-top: 20px;
+    margin-bottom: 5px;
+}
+
+.product button p {
+    margin: auto;
+}

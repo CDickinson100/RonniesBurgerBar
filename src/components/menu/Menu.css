@@ -1,0 +1,9 @@
+.menu{
+    margin-top: 4rem;
+}
+
+.menu h1{
+    text-align: center;
+    padding: 20px 0;
+    border-bottom: 1px solid silver;
+}
