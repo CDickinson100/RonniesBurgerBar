@@ -126,6 +126,13 @@ app.post('/registerUser', async (request, response) => {
 app.post('/login', async (request, response) => {
     connection.query("SELECT * FROM users where email = ?", [request.body.email], (error, results) => {
         if (error) console.log(error);
+        if (results.length === 0) {
+            response.status(200).json({
+                token: "",
+                message: "Unknown Email"
+            });
+            return;
+        }
         const isAuthorised = bcrypt.compareSync(request.body.password, results[0].password);
         response.status(200).json({
             token: isAuthorised ? getToken(results[0]) : "",
