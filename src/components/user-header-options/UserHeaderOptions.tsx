@@ -3,8 +3,6 @@ import {Link} from 'react-router-dom';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faShoppingBasket} from "@fortawesome/free-solid-svg-icons";
 
-import './Header.css';
-
 export const UserHeaderOptions: FC<{ productCount: number, userName: string }> = ({productCount, userName}) => {
     const [accountOptionsVisible, setAccountOptionsVisible] = useState(false);
 
