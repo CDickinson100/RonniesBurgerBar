@@ -10,6 +10,9 @@ import discount from "../../graphics/discount.png";
 import logo from "../../graphics/logo.png";
 import './Home.css';
 import {Link} from "react-router-dom";
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+
+import {faEnvelope} from "@fortawesome/free-solid-svg-icons";
 
 export function Home() {
     return (
@@ -31,6 +34,21 @@ export function Home() {
                     <p className="about-info">Ronnie's burger bar is a new burger joint located in the heart of
                         Cheltenham. Established in 2017 we have been satisfying customers with our delicious burgers
                         since</p>
+                </div>
+            </div>
+            <div className="home-section">
+                <h1>CONTACT US</h1>
+                <div className="home-contact">
+                    <div className="form-input">
+                        <input type="text" placeholder="Enter your email" id="email" name="email" required={true}/>
+                    </div>
+                    <div className="form-input">
+                        <input type="text" placeholder="Enter your email" id="email" name="email" required={true}/>
+                    </div>
+                    <div className="form-input">
+                        <textarea placeholder="Enter your message..."/>
+                    </div>
+                    <button className="contact-submit"><FontAwesomeIcon icon={faEnvelope}/> Send</button>
                 </div>
             </div>
         </div>

@@ -47,6 +47,10 @@
     background-color: #2691d9;
 }
 
+.form button:hover{
+    background-color: #2283c3;
+}
+
 .form button p {
     margin: auto;
 }

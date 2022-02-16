@@ -34,6 +34,10 @@
     margin-bottom: 5px;
 }
 
+.product button:hover{
+    background-color: #2283c3;
+}
+
 .product button p {
     margin: auto;
 }

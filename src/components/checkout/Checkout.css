@@ -48,6 +48,10 @@
     background-color: #2691d9;
 }
 
+.checkout-summary button:hover {
+    background-color: #2283c3;
+}
+
 .checkout-summary button p{
     color: white;
     text-align: center;
