@@ -8,6 +8,7 @@ import {IUser} from "./IUser";
 import {Menu} from "./components/menu/Menu";
 import {IProduct} from "./IProduct";
 import {Checkout} from "./components/checkout/Checkout";
+import {Home} from "./components/home/Home";
 
 export default function App() {
     const [sidebarVisible, setSidebarVisible] = useState(false);
@@ -42,6 +43,7 @@ export default function App() {
                     productCount={shoppingCart.length}/>
             <Sidebar sidebarVisible={sidebarVisible} user={user}/>
             <Routes>
+                <Route path="/" element={<Home/>}/>
                 <Route path="/menu"
                        element={<Menu addProduct={product => setShoppingCart([...shoppingCart, product])}/>}/>
                 <Route path="/checkout"

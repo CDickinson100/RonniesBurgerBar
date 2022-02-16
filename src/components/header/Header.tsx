@@ -44,14 +44,12 @@ export const Header: FC<{ toggleSidebar: () => void, user: IUser | undefined, pr
                                 </div>
                             </Link>
                             {
-                                accountOptionsVisible ?
+                                accountOptionsVisible &&
                                     <div className="account-options">
                                         <button onClick={() => logout()}>
                                             <p>Log out</p>
                                         </button>
                                     </div>
-                                    :
-                                    <></>
                             }
                         </>
                         :

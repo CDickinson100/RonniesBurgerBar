@@ -10,14 +10,11 @@ export const Sidebar: FC<{ sidebarVisible: boolean, user: IUser | undefined }> =
             <Link to="/">Home</Link>
             <Link to="/menu">Menu</Link>
             {
-                !user ?
-                    <>
-                        <Link to="/login">Login</Link>
-                        <Link to="/register">Register</Link>
-                    </>
-                    :
-                    <>
-                    </>
+                !user &&
+                <>
+                    <Link to="/login">Login</Link>
+                    <Link to="/register">Register</Link>
+                </>
             }
         </div>
     );
