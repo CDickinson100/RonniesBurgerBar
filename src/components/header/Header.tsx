@@ -2,26 +2,13 @@ import React, {FC, useState} from 'react';
 import {Link} from 'react-router-dom';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faBars} from "@fortawesome/free-solid-svg-icons";
-import {faShoppingBasket} from "@fortawesome/free-solid-svg-icons";
 
 import './Header.css';
 import {IUser} from "../../IUser";
+import {UserHeaderOptions} from "../user-header-options/UserHeaderOptions";
 
 export const Header: FC<{ toggleSidebar: () => void, user: IUser | undefined, productCount: number }>
     = ({toggleSidebar, user, productCount}) => {
-    const [accountOptionsVisible, setAccountOptionsVisible] = useState(false);
-
-    async function logout() {
-        const requestOptions = {
-            method: 'POST',
-            headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify({
-                'token': localStorage.token
-            })
-        };
-        await fetch('/logout', requestOptions);
-        window.location.reload();
-    }
 
     return (
         <div className="header">
@@ -32,26 +19,10 @@ export const Header: FC<{ toggleSidebar: () => void, user: IUser | undefined, pr
             <div className="header-right">
                 {
                     user ?
-                        <>
-                            <button className="profile"
-                                    onClick={() => setAccountOptionsVisible(!accountOptionsVisible)}>
-                                <p>{user.first_name + " " + user.last_name}</p>
-                            </button>
-                            <Link to="/checkout">
-                                <div className="shopping-cart">
-                                    <FontAwesomeIcon icon={faShoppingBasket}/>
-                                    <p>{productCount}</p>
-                                </div>
-                            </Link>
-                            {
-                                accountOptionsVisible &&
-                                    <div className="account-options">
-                                        <button onClick={() => logout()}>
-                                            <p>Log out</p>
-                                        </button>
-                                    </div>
-                            }
-                        </>
+                        <UserHeaderOptions
+                            productCount={productCount}
+                            userName={user.first_name + " " + user.last_name}
+                        />
                         :
                         <>
                             <Link to="/login" className="header-content-link">Login</Link>
