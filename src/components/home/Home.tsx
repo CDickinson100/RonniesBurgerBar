@@ -6,7 +6,10 @@ import banner from "../../graphics/banner.png";
 import delivery from "../../graphics/delivery.png";
 // @ts-ignore
 import discount from "../../graphics/discount.png";
+// @ts-ignore
+import logo from "../../graphics/logo.png";
 import './Home.css';
+import {Link} from "react-router-dom";
 
 export function Home() {
     return (
@@ -15,6 +18,11 @@ export function Home() {
                 <img className="background" alt="banner" src={banner}/>
                 <img className="delivery" alt="banner" src={delivery}/>
                 <img className="discount" alt="banner" src={discount}/>
+                <div className="landing-content">
+                    <img alt="banner" src={logo}/>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In porttitor, augue non. </p>
+                    <button><Link to="/menu"><h2>ORDER NOW</h2></Link></button>
+                </div>
             </div>
         </div>
     );

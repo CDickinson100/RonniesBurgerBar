@@ -1,11 +1,11 @@
-.home-landing .background{
+.home-landing .background {
     width: 100%;
     height: 100%;
     object-fit: cover;
     position: absolute;
 }
 
-.home-landing .delivery{
+.home-landing .delivery {
     left: 50%;
     bottom: 3%;
     transform: translate(-50%, 0);
@@ -15,11 +15,59 @@
     position: absolute;
 }
 
-.home-landing .discount{
+.home-landing .discount {
     right: 3%;
     top: calc(4rem + 3%);
     height: 20%;
     width: auto;
     object-fit: cover;
     position: absolute;
+}
+
+.landing-content {
+    top: 50%;
+    left: 5%;
+    transform: translate(0, -50%);
+    width: 33%;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.landing-content p{
+    margin: 10px 0;
+    font-size: 24px;
+}
+
+.landing-content img {
+    width: 75%;
+    height: auto;
+    margin: auto;
+}
+
+.landing-content button{
+    background-color: #2691d9;
+    border-radius: 25px;
+    border: 2px solid #2691d9;
+    text-align: center;
+    transition: 500ms;
+    cursor: pointer;
+}
+
+.landing-content button:hover{
+    background-color: transparent;
+}
+
+.landing-content button a{
+    text-decoration: none;
+}
+
+.landing-content button h2{
+    color: black;
+    font-weight: bold;
+}
+
+.landing-content button:hover h2{
+    color: white;
 }
