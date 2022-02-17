@@ -10,7 +10,12 @@ export const MenuCategory: FC<{ category: string, products: IProduct[], addProdu
             <div className="menu-category">
                 <h1>{category}</h1>
                 <div className="category-products">
-                    {products.map(product => <Product addProduct={() => addProduct(product)} product={product}/>)}
+                    {products
+                        .filter(product => product.category === category)
+                        .map((product, index) =>
+                            <Product addProduct={() => addProduct(product)} product={product} key={index}/>
+                        )
+                    }
                 </div>
             </div>
         );

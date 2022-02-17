@@ -26,17 +26,17 @@ export const Checkout: FC<{ products: IProduct[], clearBasket: () => void }> = (
         currency: 'GBP',
     });
     return (
-        <div className="checkout">
+        <div className="checkout" data-testid="checkout">
             <div className="checkout-header">
                 <h1>Checkout</h1>
-                <h1 className="checkout-header-right">{products.length + " Items"}</h1>
+                <h1 className="checkout-header-right" data-testid="checkout-items">{products.length + " Items"}</h1>
             </div>
             <div className="checkout-items">
-                {products.map(product => <ProductCheckoutSummary product={product}/>)}
+                {products.map((product, index) => <ProductCheckoutSummary product={product} key={index}/>)}
             </div>
             <div className="checkout-summary">
                 <button type="submit" onClick={() => checkout()}><p>Checkout</p></button>
-                <p>{"Total: " + formatter.format(products.map(value => value.price).reduce((partialSum, a) => partialSum + a, 0) / 100)}</p>
+                <p data-testid="checkout-total">{"Total: " + formatter.format(products.map(value => value.price).reduce((partialSum, a) => partialSum + a, 0) / 100)}</p>
             </div>
         </div>
     );

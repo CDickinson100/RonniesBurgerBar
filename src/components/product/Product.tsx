@@ -9,11 +9,11 @@ export const Product: FC<{ product: IProduct, addProduct: () => void }> = ({prod
         currency: 'GBP',
     });
     return (
-        <div className="product">
-            <h5>{product.name + " (" + formatter.format(product.price / 100) + ")"}</h5>
+        <div className="product" data-testid="product">
+            <h5 data-testid="name-price">{product.name + " (" + formatter.format(product.price / 100) + ")"}</h5>
             <img className="product-image" alt={product.name} src={"data:image/png;base64," + product.image}/>
             <div className="product-purchase">
-                <button type="submit" onClick={() => addProduct()}><p>Purchase</p></button>
+                <button type="submit" data-testid="purchase" onClick={() => addProduct()}><p>Purchase</p></button>
             </div>
         </div>
     );

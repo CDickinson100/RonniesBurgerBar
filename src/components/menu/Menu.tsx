@@ -23,12 +23,9 @@ export const Menu: FC<{ addProduct: (product: IProduct) => void }> = ({addProduc
 
     return (
         <div className="menu">
-            <MenuCategory category="Burgers" addProduct={addProduct}
-                          products={products.filter(value => value.category === "Burger")}/>
-            <MenuCategory category="Sides" addProduct={addProduct}
-                          products={products.filter(value => value.category === "Side")}/>
-            <MenuCategory category="Drinks" addProduct={addProduct}
-                          products={products.filter(value => value.category === "Drink")}/>
+            <MenuCategory category="Burger" addProduct={addProduct} products={products}/>
+            <MenuCategory category="Side" addProduct={addProduct} products={products}/>
+            <MenuCategory category="Drink" addProduct={addProduct} products={products}/>
         </div>
     );
 }

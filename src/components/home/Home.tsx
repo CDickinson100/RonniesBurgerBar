@@ -40,7 +40,7 @@ export function Home() {
                 <h1>CONTACT US</h1>
                 <div className="home-contact">
                     <div className="form-input">
-                        <input type="text" placeholder="Enter your email" id="email" name="email" required={true}/>
+                        <input type="text" placeholder="Enter your name" id="email" name="email" required={true}/>
                     </div>
                     <div className="form-input">
                         <input type="text" placeholder="Enter your email" id="email" name="email" required={true}/>

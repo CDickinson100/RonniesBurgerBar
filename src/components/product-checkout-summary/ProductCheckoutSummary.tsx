@@ -9,7 +9,7 @@ export const ProductCheckoutSummary: FC<{ product: IProduct }> = ({product}) => 
         currency: 'GBP',
     });
     return (
-        <div className="product-checkout-summary">
+        <div className="product-checkout-summary" data-testid="product-checkout-summary">
             <div className="product-checkout-summary-description">
                 <img className="product-checkout-summary-image" alt={product.name} src={"data:image/png;base64," + product.image}/>
                 <p>{product.name}</p>
