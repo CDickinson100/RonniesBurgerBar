@@ -65,6 +65,7 @@
     border: none;
     text-align: center;
     cursor: pointer;
+    width: 100%;
 }
 
 .landing-content button:hover {

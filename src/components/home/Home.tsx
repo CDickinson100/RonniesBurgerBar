@@ -24,13 +24,13 @@ export function Home() {
                 <div className="landing-content">
                     <img alt="banner" src={logo}/>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In porttitor, augue non. </p>
-                    <button><Link to="/menu"><h2>ORDER NOW</h2></Link></button>
+                    <Link to="/menu"><button><h2>ORDER NOW</h2></button></Link>
                 </div>
             </div>
             <div className="home-section">
                 <h1>ABOUT US</h1>
                 <div className="home-content">
-                    <iframe className="about-location" src="https://maps.google.com/maps?q=Cheltenham&output=embed"/>
+                    <iframe title="Map" className="about-location" src="https://maps.google.com/maps?q=Cheltenham&output=embed"/>
                     <p className="about-info">Ronnie's burger bar is a new burger joint located in the heart of
                         Cheltenham. Established in 2017 we have been satisfying customers with our delicious burgers
                         since</p>
