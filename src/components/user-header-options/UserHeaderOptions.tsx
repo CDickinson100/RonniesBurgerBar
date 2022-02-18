@@ -3,6 +3,8 @@ import {Link} from 'react-router-dom';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faShoppingBasket} from "@fortawesome/free-solid-svg-icons";
 
+import './UserHeaderOptions.css';
+
 export const UserHeaderOptions: FC<{ productCount: number, userName: string }> = ({productCount, userName}) => {
     const [accountOptionsVisible, setAccountOptionsVisible] = useState(false);
 
@@ -19,7 +21,7 @@ export const UserHeaderOptions: FC<{ productCount: number, userName: string }> =
     }
 
     return (
-        <>
+        <div data-testid="user-header">
             <button className="profile"
                     onClick={() => setAccountOptionsVisible(!accountOptionsVisible)}>
                 <p>{userName}</p>
@@ -38,6 +40,6 @@ export const UserHeaderOptions: FC<{ productCount: number, userName: string }> =
                     </button>
                 </div>
             }
-        </>
+        </div>
     );
 }

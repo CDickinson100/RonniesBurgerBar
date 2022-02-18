@@ -1,4 +1,4 @@
-import React, {FC, useState} from 'react';
+import React, {FC} from 'react';
 import {Link} from 'react-router-dom';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faBars} from "@fortawesome/free-solid-svg-icons";
@@ -24,10 +24,10 @@ export const Header: FC<{ toggleSidebar: () => void, user: IUser | undefined, pr
                             userName={user.first_name + " " + user.last_name}
                         />
                         :
-                        <>
+                        <div data-testid="guest-header">
                             <Link to="/login" className="header-content-link">Login</Link>
                             <Link to="/register" className="header-content-link">Register</Link>
-                        </>
+                        </div>
                 }
 
                 <div className="toggle-sidebar">

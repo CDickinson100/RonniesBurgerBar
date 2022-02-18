@@ -1,0 +1,47 @@
+.shopping-cart {
+    display: flex;
+    flex-direction: row;
+    cursor: pointer;
+}
+
+.shopping-cart:hover svg{
+    color: #2691d9;
+}
+
+.shopping-cart:hover p{
+    color: #2691d9;
+}
+
+.shopping-cart svg, p {
+    color: white;
+    margin: auto;
+    padding: 5px;
+}
+
+.account-options {
+    position: absolute;
+    background-color: #3d3d3e;
+    z-index: 9999;
+    top: 4rem;
+    left: min(calc(100% - 250px), 1460px);
+    width: 250px;
+}
+
+.account-options button {
+    background-color: transparent;
+    border: none;
+}
+
+.account-options p {
+    color: #ecf0f1;
+    font-weight: bold;
+    text-decoration: none;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    transition: 200ms;
+    cursor: pointer;
+}
+
+.account-options p:hover {
+    color: #2691d9;
+}
