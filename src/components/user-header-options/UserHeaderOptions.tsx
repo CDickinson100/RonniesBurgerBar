@@ -21,7 +21,7 @@ export const UserHeaderOptions: FC<{ productCount: number, userName: string }> =
     }
 
     return (
-        <div data-testid="user-header">
+        <>
             <button className="profile"
                     onClick={() => setAccountOptionsVisible(!accountOptionsVisible)}>
                 <p>{userName}</p>
@@ -40,6 +40,6 @@ export const UserHeaderOptions: FC<{ productCount: number, userName: string }> =
                     </button>
                 </div>
             }
-        </div>
+        </>
     );
 }
